@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'corsheaders',
-    'api'
+    #'api'
 ]
 
 MIDDLEWARE = [
@@ -126,10 +126,10 @@ REST_FRAMEWORK = {
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
     ],
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    #'DEFAULT_AUTHENTICATION_CLASSES': (
+     #   'rest_framework_simplejwt.authentication.JWTAuthentication',
         # otras clases de autenticación si las necesitas
-    ),
+    #),
 
 }
 
@@ -148,7 +148,7 @@ REST_FRAMEWORK = {
 '''
 
 
-
+'''
 # Modelo de usuario personalizado
 AUTH_USER_MODEL = 'api.Usuario'
 
@@ -158,7 +158,12 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+'''
 
+
+
+
+'''
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
@@ -172,7 +177,10 @@ AUTHENTICATION_BACKENDS = [
     'tu_app.authentication.NumeroAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
-CORS_ALLOWED_ORIGINS = ["http://localhost:4200"]
+'''
+
+
+CORS_ALLOWED_ORIGINS = ["*"]
 
 
 # Internationalization
