@@ -1,0 +1,8 @@
+[
+    {"model": "api.semestre", "pk": 1, "fields": {"numero": 1}},
+    {"model": "api.semestre", "pk": 2, "fields": {"numero": 2}},
+    {"model": "api.semestre", "pk": 3, "fields": {"numero": 3}},
+    {"model": "api.semestre", "pk": 4, "fields": {"numero": 4}},
+    {"model": "api.semestre", "pk": 5, "fields": {"numero": 5}},
+    {"model": "api.semestre", "pk": 6, "fields": {"numero": 6}}
+]
