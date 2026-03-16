@@ -27,18 +27,7 @@ SECRET_KEY = 'django-insecure-!-4^kz=$bb4tuw)3@j4ei*y#c*at!(zz!=^*1_d-+n0_4%gj9m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['titopython.pythonanywhere.com']
-
-ALLOWED_HOSTS = []
-
-
-'''
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-'''
-
-
+ALLOWED_HOSTS = ['titopython.pythonanywhere.com']
 
 # Application definition
 
@@ -49,11 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework_simplejwt',
     'rest_framework',
     'django_filters',
     'corsheaders',
-    #'api'
 ]
 
 MIDDLEWARE = [
@@ -133,54 +120,14 @@ REST_FRAMEWORK = {
 
 }
 
-'''
-REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': [
-        'django_filters.rest_framework.DjangoFilterBackend',
-        'rest_framework.filters.SearchFilter',
-        'rest_framework.filters.OrderingFilter',
-    ]
-}
 
 
 
-
-'''
-
-
-'''
 # Modelo de usuario personalizado
-AUTH_USER_MODEL = 'api.Usuario'
-
-# Backend de autenticación
-AUTHENTICATION_BACKENDS = [
-    'api.authentication.NumeroAuthBackend',
-    'django.contrib.auth.backends.ModelBackend',
-]
-
-'''
+#AUTH_USER_MODEL = 'api.Usuario'
 
 
 
-
-'''
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'AUTH_HEADER_TYPES': ('Bearer',),
-    'USER_ID_FIELD': 'numero',
-    'USER_ID_CLAIM': 'user_numero',
-}
-
-# settings.py
-AUTHENTICATION_BACKENDS = [
-    'tu_app.authentication.NumeroAuthBackend',
-    'django.contrib.auth.backends.ModelBackend',
-]
-'''
-
-
-#CORS_ALLOWED_ORIGINS = ["*"]
 CORS_ALLOW_ALL_ORIGINS = True
 
 
@@ -200,14 +147,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
-'''
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-'''
-
-#python manage.py collectstatic --noinput
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
